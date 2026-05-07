@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Code/VIN_AI/Labs/Day21-Track2-CI-CD-for-AI-Systems/mlruns/0/ecc1522310dd46c8982c28d2e3d969b2/artifacts
+end_time: 1778128499749
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ecc1522310dd46c8982c28d2e3d969b2
+run_name: placid-rook-617
+run_uuid: ecc1522310dd46c8982c28d2e3d969b2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1778128495784
+status: 3
+tags: []
+user_id: Admin

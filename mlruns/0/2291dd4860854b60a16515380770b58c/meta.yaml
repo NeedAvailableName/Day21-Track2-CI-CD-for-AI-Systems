@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Code/VIN_AI/Labs/Day21-Track2-CI-CD-for-AI-Systems/mlruns/0/2291dd4860854b60a16515380770b58c/artifacts
+end_time: 1778128160567
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 2291dd4860854b60a16515380770b58c
+run_name: upset-dove-211
+run_uuid: 2291dd4860854b60a16515380770b58c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1778128153787
+status: 3
+tags: []
+user_id: Admin
