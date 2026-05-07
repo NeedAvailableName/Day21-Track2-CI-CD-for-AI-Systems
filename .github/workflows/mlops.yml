@@ -59,6 +59,7 @@ jobs:
       - name: Authenticate to Cloud Storage
         run: |
           echo "$CLOUD_CREDENTIALS" > /tmp/sa-key.json
+          gcloud auth activate-service-account --key-file=/tmp/sa-key.json
           echo "GOOGLE_APPLICATION_CREDENTIALS=/tmp/sa-key.json" >> $GITHUB_ENV
         env:
           CLOUD_CREDENTIALS: ${{ secrets.CLOUD_CREDENTIALS }}
@@ -118,17 +119,21 @@ jobs:
       - name: Authenticate to Cloud Storage
         run: |
           echo "$CLOUD_CREDENTIALS" > /tmp/sa-key.json
+          gcloud auth activate-service-account --key-file=/tmp/sa-key.json
           echo "GOOGLE_APPLICATION_CREDENTIALS=/tmp/sa-key.json" >> $GITHUB_ENV
         env:
           CLOUD_CREDENTIALS: ${{ secrets.CLOUD_CREDENTIALS }}
 
       - name: Download metrics for comparison
         run: |
+          # Candidate metrics MUST exist
           gsutil cp gs://$CLOUD_BUCKET/models/candidate/metrics.json candidate_metrics.json
+          
+          # Latest metrics are optional (first run)
           gsutil cp gs://$CLOUD_BUCKET/models/latest/metrics.json latest_metrics.json || echo "{}" > latest_metrics.json
         env:
           CLOUD_BUCKET: ${{ secrets.CLOUD_BUCKET }}
-        continue-on-error: true
+
 
       - name: Check eval gate (Bonus 4 & Bonus 2)
         run: |
