@@ -1,0 +1,5 @@
+[core]
+    remote = myremote
+['remote "myremote"']
+    url = gs://lab21-ai20k-bucket/dvc
+    credentialpath = ../sa-key.json
