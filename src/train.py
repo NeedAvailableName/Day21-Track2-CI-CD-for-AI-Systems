@@ -12,6 +12,7 @@ mlflow.set_tracking_uri(os.getenv("MLFLOW_TRACKING_URI", "sqlite:///mlflow.db"))
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score, confusion_matrix, classification_report
+import numpy as np
 
 EVAL_THRESHOLD = 0.70
 
@@ -111,7 +112,6 @@ def train(
 
 
 if __name__ == "__main__":
-    import numpy as np # Needed for confusion matrix string formatting
     with open("params.yaml") as f:
         params = yaml.safe_load(f)
     train(params)
